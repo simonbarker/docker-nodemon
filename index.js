@@ -1,7 +1,23 @@
-const PokemonService = require('./services/pokemon-service')
+const PokemonService = require('./services/pokemon-service');
+const express = require('express');
+
+const app = express();
+const port = 3000;
 
 let pService = new PokemonService();
+console.log(app);
 
-let pokemon = pService.getData('https://pokeapi.co/api/v2/pokemon/');
+(async() => {
 
-console.log('pokemon: ', pokemon);
+  app.get('/getPokemon', async (req, res) => {
+    let pokemon = await pService.getData('https://pokeapi.co/api/v2/pokemon/');
+
+    console.log('pokemon: ', pokemon);
+    res.send(pokemon);
+  })
+
+  app.listen(port, () => {
+    console.log(`listening on port ${port}`);
+  })
+
+})()
