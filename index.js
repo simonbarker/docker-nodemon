@@ -12,7 +12,7 @@ console.log(app);
   app.get('/getPokemon', async (req, res) => {
     let pokemon = await pService.getData('https://pokeapi.co/api/v2/pokemon/');
 
-    console.log('pokemon: ', pokemon);
+    console.log('got pokemon: ', pokemon);
     res.send(pokemon);
   })
 
