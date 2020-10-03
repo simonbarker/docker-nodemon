@@ -10,4 +10,4 @@ RUN apk add bash && \
 
 USER node
 
-ENTRYPOINT [ "npm", "run", "start-dev" ]
+CMD [ "npm", "run", "start" ]
