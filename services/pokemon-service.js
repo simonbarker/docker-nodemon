@@ -1,15 +1,13 @@
 const fetch = require('node-fetch');
 
 class PokemonService {
-  constructor() {
-    console.log('constructing a pokemon instance');
-  }
+  constructor() { }
 
   getData = async url => {
+    console.log(`[${__filename}]: Getting pokemon`);
     try {
       const response = await fetch(url);
-      const json = await response.json();
-      return json;
+      return await response.json();
     } catch (error) {
       console.log(error);
     }
