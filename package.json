@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "start": "node index.js",
-    "start-dev": "nodemon index.js"
+    "test": "mocha --harmony",
+    "start": "node --harmony index.js",
+    "start-dev": "nodemon --harmony index.js"
   },
   "author": "",
   "license": "ISC",
